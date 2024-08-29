@@ -16,7 +16,10 @@ $ ollama serve
 ````
 ## 3. Ingreso a otra terminal
 
-Se van a haber creador dos terminales, una se llama Serve y la nueva es un bash
+Ejecutar Ollama en un server va a ocupar la terminal que teniamos, para seguir trabajando debemos crear una nueva terminal. De esta forma tendremos dos terminales
+
+- Ollama: donde se va a ejecutar Ollama
+- Bash: DONDE VAMOS A COMUNICARNOS CON Ollama
 
 ## 4. Descargar algún modelo
 
@@ -32,4 +35,19 @@ curl -X POST http://localhost:11434/api/generate -d '{
   "model": "tinyllama",
   "prompt": "Why is the sky blue?"
 }'
+````
+Ver el JASON generado por tokens
+```` bash
+curl -X POST http://localhost:11434/api/generate -d '{
+  "model": "tinyllama",
+  "prompt": "Why is the sky blue?"
+}' -o salida.md
+````
+Ver el JASON generado, pero todos los tokens en conjunto
+````bash
+curl -X POST http://localhost:11434/api/generate -d '{
+  "model": "tinyllama",
+  "prompt": "Why is the sky blue?",
+  "stream": false
+}' -o salida.md
 ````
