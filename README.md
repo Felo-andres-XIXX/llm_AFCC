@@ -28,7 +28,7 @@ En la página de [modelos](https://ollama.com/library) de ollama se busca el mod
 ````bash
 $ ollama pull tinyllama
 ````
-## 4. Prueba de Request a la API REST
+## 5. Prueba de Request a la API REST
 Para realizar una petición basica a la API de ollama se sigue la siguiente estructura
 ```` bash
 curl -X POST http://localhost:11434/api/generate -d '{
