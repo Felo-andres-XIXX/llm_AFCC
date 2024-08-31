@@ -75,3 +75,6 @@ curl "https://api.groq.com/openai/v1/chat/completions" \
          "stream": false
        }'
 ````
+### 7. Cargar una API con Python
+````
+````
