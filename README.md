@@ -51,3 +51,27 @@ curl -X POST http://localhost:11434/api/generate -d '{
   "stream": false
 }' -o salida.md
 ````
+### 6. Realizar un Request a GROQ
+### 6.1 Cargar API KEY
+Se debe cargar en la terminal el correspondiente api key para poder utilizar posteriormente GROQ
+````bash
+export GROQ_API_KEY=<your-api-key-here>
+````
+### 6.2 Cargar API
+Ahora si se procede a cargar la API junto con nuestra consulta
+````bash
+curl "https://api.groq.com/openai/v1/chat/completions" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${GROQ_API_KEY}" \
+  -d '{
+         "messages": [
+           {
+             "role": "user",
+             "content":"Why is the sky blue?"
+           }
+         ],
+         "model": "gemma-7b-it",
+         "stream": false
+       }'
+````
