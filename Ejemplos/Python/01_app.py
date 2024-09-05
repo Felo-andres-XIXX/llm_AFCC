@@ -5,14 +5,16 @@ curl -X POST http://localhost:11434/api/generate -d '{
   "stream": false
 }' -o salida.md
 """
-import requests
+import requests #Tiene funciones similares a curl
+import json #Permite convertir de texto a json
 
 url = 'http://localhost:11434/api/generate'
 data = {
     "model": "tinyllama",
-    "prompt": "Que es la sifilis",
+    "prompt": "why is the sky blue?",
     "stream": False}
 
 response = requests.post(url, json = data)
+response = json.loads(response.text)
 
-print(response.text)
+print(response["response"])

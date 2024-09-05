@@ -76,5 +76,18 @@ curl "https://api.groq.com/openai/v1/chat/completions" \
        }'
 ````
 ### 7. Cargar una API con Python
-````
+````bash
+import requests
+import json
+
+url = 'http://localhost:11434/api/generate'
+data = {
+    "model": "tinyllama",
+    "prompt": "why is the sky?",
+    "stream": False}
+
+response = requests.post(url, json = data)
+response = json.loads(response.text)
+
+print(response["response"])
 ````
