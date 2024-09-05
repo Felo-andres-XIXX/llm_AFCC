@@ -1,6 +1,6 @@
 # llm_AFCC
 Repositorio de trabajo con modelos de lenguaje largo usando ollama
-# 1. Instalación de Ollama
+## 1. Instalación de Ollama
 
 Para instalar ollama accedemos a la pagina de [ollama](https://ollama.com/download/linux), en una terminal se ejecuta el siguiente comando
 
@@ -28,7 +28,14 @@ En la página de [modelos](https://ollama.com/library) de ollama se busca el mod
 ````bash
 $ ollama pull tinyllama
 ````
-## 5. Prueba de Request a la API REST
+## 5. Correr o ejecutar algun modelo
+Para poder comenzar a ejecutar algun modelo de ollama desde la terminal ingresamos el siguiente comando:
+````bash
+$ ollama run < Nombre del modelo >
+Ejemplo:
+$ ollama run tinyllama
+````
+## 6. Prueba de Request a la API REST
 Para realizar una petición basica a la API de ollama se sigue la siguiente estructura
 ```` bash
 curl -X POST http://localhost:11434/api/generate -d '{
@@ -51,13 +58,13 @@ curl -X POST http://localhost:11434/api/generate -d '{
   "stream": false
 }' -o salida.md
 ````
-### 6. Realizar un Request a GROQ
-### 6.1 Cargar API KEY
+## 7. Realizar un Request a GROQ
+### 7.1 Cargar API KEY
 Se debe cargar en la terminal el correspondiente api key para poder utilizar posteriormente GROQ
 ````bash
 export GROQ_API_KEY=<your-api-key-here>
 ````
-### 6.2 Cargar API
+### 7.2 Cargar API
 Ahora si se procede a cargar la API junto con nuestra consulta
 ````bash
 curl "https://api.groq.com/openai/v1/chat/completions" \
@@ -75,7 +82,7 @@ curl "https://api.groq.com/openai/v1/chat/completions" \
          "stream": false
        }'
 ````
-### 7. Cargar una API con Python
+### 8. Cargar una API con Python
 ````bash
 import requests
 import json
@@ -91,3 +98,4 @@ response = json.loads(response.text)
 
 print(response["response"])
 ````
+ ### 9. Cargar una API con JS
