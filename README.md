@@ -99,3 +99,5 @@ response = json.loads(response.text)
 print(response["response"])
 ````
  ### 9. Cargar una API con JS
+ ## 9.1 Desarrollo HTML 
+ ## 9.2 Desarrollo JS
